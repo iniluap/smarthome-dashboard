@@ -3,7 +3,7 @@ const lightIntensity = 90;
 </script>
 
 <template>
-  <section>
+  <section class="box">
     <h3>Light intensity</h3>
     <p>{{ lightIntensity }}%</p>
   </section>

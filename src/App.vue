@@ -18,9 +18,7 @@ import HelloWorld from "./components/HelloWorld.vue";
   </nav>
   <main>
     <header>
-      <div class="wrapper">
-        <HelloWorld userName="Paulina" />
-      </div>
+      <HelloWorld userName="Paulina" />
     </header>
 
     <RouterView />
@@ -30,7 +28,15 @@ import HelloWorld from "./components/HelloWorld.vue";
 <style scoped>
 header {
   line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+main {
   max-height: 100vh;
+  padding: 2rem;
+  background-color: var(--color-background);
+  border-top-left-radius: var(--border-radius-primary);
+  border-bottom-left-radius: var(--border-radius-primary);
 }
 
 .logo {
@@ -40,9 +46,26 @@ header {
 
 nav {
   width: 100%;
+  max-height: 100vh;
+  position: relative;
+  padding: 2rem 0 2rem 2rem;
+  border-top-left-radius: var(--border-radius-primary);
+  border-bottom-left-radius: var(--border-radius-primary);
+  background-color: var(--color-background-mute);
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
+}
+
+nav::after {
+  content: "";
+  background-color: var(--color-background-mute);
+  display: block;
+  position: relative;
+  right: -100px;
+  width: 100px;
+  height: 120vh;
+  z-index: -1;
+  top: -30%;
 }
 
 nav a.router-link-exact-active {
@@ -59,24 +82,8 @@ nav a {
 }
 
 @media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
   nav {
-    text-align: left;
     font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
   }
 }
 </style>

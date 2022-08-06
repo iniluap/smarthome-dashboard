@@ -15,7 +15,7 @@ const usersAtHome = users.filter((user) => user.isAtHome);
 </script>
 
 <template>
-  <section>
+  <section class="box">
     <h3>Now at home</h3>
     <ul>
       <li v-for="user in usersAtHome" :key="user.id">{{ user.name }}</li>

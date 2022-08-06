@@ -34,6 +34,8 @@
   --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 160px;
+  --border-radius-primary: 2rem;
+  --border-radius-secondary: 1.5rem;
 }
 
 @media (prefers-color-scheme: dark) {

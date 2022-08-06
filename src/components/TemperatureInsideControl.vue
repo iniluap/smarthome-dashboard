@@ -3,8 +3,8 @@ const temperatureInside = 23;
 </script>
 
 <template>
-  <section>
-    <h3>Light intensity</h3>
+  <section class="box">
+    <h3>Temperature inside</h3>
     <p>{{ temperatureInside }}&#176;C</p>
   </section>
 </template>
