@@ -2,14 +2,14 @@ import { createApp } from "vue";
 import { createPinia } from "pinia";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faHouse, faUserGear } from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faUserGear, faClock, faTemperatureHalf, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
 import App from "./App.vue";
 import router from "./router";
 
 import "./assets/main.css";
 
-library.add(faHouse, faUserGear);
+library.add(faHouse, faUserGear, faClock, faTemperatureHalf, faUserCircle);
 
 const app = createApp(App);
 

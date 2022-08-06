@@ -1,10 +1,16 @@
 @import "./base.css";
 @import "./box.css";
+@import "./icons.css";
 
 #app {
   max-width: 1280px;
   margin: 0 auto;
   font-weight: normal;
+}
+
+h3 {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 a {
@@ -33,4 +39,8 @@ a {
     grid-template-columns: auto minmax(80vw, 90vw);
     gap: 2rem;
   }
+}
+
+.widget-content {
+  font-size: 2.5rem;
 }

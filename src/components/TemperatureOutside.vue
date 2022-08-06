@@ -4,7 +4,7 @@ const currentTemperature = 22;
 
 <template>
   <section class="box">
-    <h3>Current temperature outside</h3>
-    <p>{{ currentTemperature }}&#176;C</p>
+    <h3>Temperature outside</h3>
+    <p class="widget-content"><font-awesome-icon icon="fa-solid fa-temperature-half" /> {{ currentTemperature }}&#176;C</p>
   </section>
 </template>

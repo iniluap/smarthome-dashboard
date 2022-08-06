@@ -21,6 +21,7 @@ import HumidityControl from "../components/HumidityControl.vue";
 <style scoped>
 main {
   display: grid;
+  grid-template-columns: 4fr 4fr 3fr;
   grid-template-areas:
     "time temp who"
     "control control control";
