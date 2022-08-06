@@ -13,8 +13,12 @@ import HelloWorld from "./components/HelloWorld.vue";
       height="85"
     />
 
-    <RouterLink to="/"><font-awesome-icon icon="fa-solid fa-house" /></RouterLink>
-    <RouterLink to="/user"><font-awesome-icon icon="fa-solid fa-user-gear" /></RouterLink>
+    <RouterLink to="/"
+      ><font-awesome-icon icon="fa-solid fa-house"
+    /></RouterLink>
+    <RouterLink to="/user"
+      ><font-awesome-icon icon="fa-solid fa-user-gear"
+    /></RouterLink>
   </nav>
   <main>
     <header>

@@ -11,6 +11,8 @@ setInterval(getTime, 1000);
 <template>
   <section class="box">
     <h3>Current time</h3>
-    <p class="widget-content"><font-awesome-icon icon="fa-solid fa-clock" /> {{ currentTime }}</p>
+    <p class="widget-content">
+      <font-awesome-icon icon="fa-solid fa-clock" /> {{ currentTime }}
+    </p>
   </section>
 </template>
