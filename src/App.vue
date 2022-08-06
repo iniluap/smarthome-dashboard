@@ -9,12 +9,12 @@ import HelloWorld from "./components/HelloWorld.vue";
       alt="Vue logo"
       class="logo"
       src="@/assets/logo.svg"
-      width="75"
-      height="75"
+      width="85"
+      height="85"
     />
 
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
+    <RouterLink to="/"><font-awesome-icon icon="fa-solid fa-house" /></RouterLink>
+    <RouterLink to="/user"><font-awesome-icon icon="fa-solid fa-user-gear" /></RouterLink>
   </nav>
   <main>
     <header>
@@ -51,21 +51,21 @@ nav {
   padding: 2rem 0 2rem 2rem;
   border-top-left-radius: var(--border-radius-primary);
   border-bottom-left-radius: var(--border-radius-primary);
-  background-color: var(--color-background-mute);
+  background-color: var(--color-blush);
   font-size: 12px;
   text-align: center;
 }
 
 nav::after {
   content: "";
-  background-color: var(--color-background-mute);
+  background-color: var(--color-blush);
   display: block;
-  position: relative;
+  position: absolute;
+  top: 0;
   right: -100px;
   width: 100px;
-  height: 120vh;
+  height: 100vh;
   z-index: -1;
-  top: -30%;
 }
 
 nav a.router-link-exact-active {
@@ -77,13 +77,22 @@ nav a.router-link-exact-active:hover {
 }
 
 nav a {
-  display: inline-block;
-  padding: 0 1rem;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
 @media (min-width: 1024px) {
   nav {
     font-size: 1rem;
+  }
+
+  nav a {
+    display: flex;
   }
 }
 </style>
