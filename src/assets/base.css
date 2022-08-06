@@ -33,9 +33,18 @@
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
 
+  --color-blush: #ead0c6;
+  --color-peach: #eb967b;
+  --color-mustard: #d8a938;
+  --color-mint: #c7dad2;
+  --color-sage: #8d9264;
+  --color-emerald: #37797e;
+
   --section-gap: 160px;
   --border-radius-primary: 2rem;
   --border-radius-secondary: 1.5rem;
+
+  --temperature-control-height: 55%;
 }
 
 @media (prefers-color-scheme: dark) {

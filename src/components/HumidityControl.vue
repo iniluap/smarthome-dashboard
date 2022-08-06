@@ -4,7 +4,7 @@ const airHumidity = 60;
 
 <template>
   <section class="box">
-    <h3>Light intensity</h3>
+    <h3>Humidity</h3>
     <p>{{ airHumidity }}%</p>
   </section>
 </template>
