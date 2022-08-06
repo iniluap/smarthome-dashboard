@@ -1,5 +1,11 @@
 <script setup lang="ts">
-const currentTime: string = new Date().toLocaleTimeString();
+import { ref } from "vue";
+
+const currentTime = ref("");
+function getTime() {
+  currentTime.value = new Date().toLocaleTimeString();
+}
+setInterval(getTime, 1000);
 </script>
 
 <template>
