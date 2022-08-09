@@ -61,7 +61,6 @@ function updateThermometer(valueToChange: number): void {
     "temp"
     "decrease";
   background: linear-gradient(to top, var(--color-mint), var(--color-peach));
-  background-color: var(--color-background-soft);
   border-radius: 0.5rem;
   overflow: hidden;
   text-align: center;

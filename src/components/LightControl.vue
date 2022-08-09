@@ -1,23 +1,30 @@
 <script setup lang="ts">
 import { ref } from "vue";
-const lightIntensity = ref(90);
+const lightIntensity = ref(80);
 const maxLight = 100;
 const minLight = 0;
 
-function increaseLight() {
+function increaseLight(): void {
   if (lightIntensity.value !== maxLight) {
     lightIntensity.value++;
+    updateLightIntense(lightIntensity.value);
   } else {
     lightIntensity.value;
   }
 }
 
-function decreaseLight() {
+function decreaseLight(): void {
   if (lightIntensity.value !== minLight) {
     lightIntensity.value--;
+    updateLightIntense(lightIntensity.value);
   } else {
     lightIntensity.value;
   }
+}
+
+function updateLightIntense(valueToChange: number): void {
+  const root = document.documentElement;
+  root.style.setProperty("--light-control-width", `${valueToChange}%`);
 }
 </script>
 
@@ -26,7 +33,7 @@ function decreaseLight() {
     <h3>Light intensity</h3>
     <div class="light-control">
       <button class="control-button decrease" @click="decreaseLight">-</button>
-      <p class="light-intensity">{{ lightIntensity }}&#176;C</p>
+      <p class="light-intensity">{{ lightIntensity }}%</p>
       <button class="control-button increase" @click="increaseLight">+</button>
     </div>
   </section>
@@ -34,15 +41,14 @@ function decreaseLight() {
 
 <style scoped>
 .light-control {
-  margin: 0.5rem auto;
+  margin: 3rem auto auto;
   position: relative;
-  width: 9rem;
+  width: 100%;
   height: 3.5rem;
   display: grid;
   grid-template-columns: 2rem 1fr 2rem;
   grid-template-areas: "decrease light increase";
-  background: linear-gradient(to right, var(--color-mint), var(--vt-c-indigo));
-  background-color: var(--color-background-soft);
+  background: linear-gradient(to right, var(--vt-c-indigo), var(--color-mint));
   border-radius: 0.5rem;
   overflow: hidden;
   text-align: center;
@@ -52,10 +58,10 @@ function decreaseLight() {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--light-control-height);
-  background-color: var(--color-background-soft);
+  right: 0;
+  height: 100%;
+  width: calc(100% - var(--light-control-width));
+  background-color: var(--vt-c-black-soft);
   z-index: 1;
 }
 
@@ -68,17 +74,18 @@ function decreaseLight() {
 .control-button.increase {
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  background-color: var(--vt-c-indigo);
+  background-color: var(--color-mint);
 }
 
 .control-button.decrease {
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
-  background-color: var(--color-mint);
+  background-color: var(--vt-c-indigo);
 }
 
 .light-intensity {
   align-self: center;
+  color: var(--vt-c-white-soft);
   font-weight: bold;
   z-index: 2;
 }
