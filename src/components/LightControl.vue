@@ -61,7 +61,7 @@ function updateLightIntense(valueToChange: number): void {
   right: 0;
   height: 100%;
   width: calc(100% - var(--light-control-width));
-  background-color: var(--vt-c-black-soft);
+  background-color: var(--vt-c-black-mute);
   z-index: 1;
 }
 
@@ -81,6 +81,7 @@ function updateLightIntense(valueToChange: number): void {
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   background-color: var(--vt-c-indigo);
+  color: var(--vt-c-white-soft);
 }
 
 .light-intensity {
