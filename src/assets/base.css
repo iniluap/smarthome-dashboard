@@ -46,6 +46,7 @@
 
   --temperature-control-height: 55%;
   --light-control-width: 80%;
+  --humidity-control-height: 35%;
 }
 
 @media (prefers-color-scheme: dark) {
