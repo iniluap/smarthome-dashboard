@@ -36,11 +36,8 @@ header {
 }
 
 main {
-  max-height: 100vh;
   padding: 2rem;
   background-color: var(--color-background);
-  border-top-left-radius: var(--border-radius-primary);
-  border-bottom-left-radius: var(--border-radius-primary);
 }
 
 .logo {
@@ -52,24 +49,10 @@ nav {
   width: 100%;
   max-height: 100vh;
   position: relative;
-  padding: 2rem 0 2rem 2rem;
-  border-top-left-radius: var(--border-radius-primary);
-  border-bottom-left-radius: var(--border-radius-primary);
+  padding: 2rem;
   background-color: var(--color-blush);
-  font-size: 12px;
+  font-size: 1rem;
   text-align: center;
-}
-
-nav::after {
-  content: "";
-  background-color: var(--color-blush);
-  display: block;
-  position: absolute;
-  top: 0;
-  right: -100px;
-  width: 100px;
-  height: 100vh;
-  z-index: -1;
 }
 
 nav a.router-link-exact-active {
@@ -92,11 +75,31 @@ nav a {
 
 @media (min-width: 1024px) {
   nav {
-    font-size: 1rem;
+    border-top-left-radius: var(--border-radius-primary);
+    border-bottom-left-radius: var(--border-radius-primary);
+    padding: 2rem 0 2rem 2rem;
+  }
+
+  nav::after {
+    content: "";
+    background-color: var(--color-blush);
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -100px;
+    width: 100px;
+    height: 100vh;
+    z-index: -1;
   }
 
   nav a {
     display: flex;
+  }
+
+  main {
+    max-height: 100vh;
+    border-top-left-radius: var(--border-radius-primary);
+    border-bottom-left-radius: var(--border-radius-primary);
   }
 }
 </style>

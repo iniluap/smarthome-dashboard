@@ -8,23 +8,28 @@ import HumidityControl from "../components/HumidityControl.vue";
 </script>
 
 <template>
-  <main>
+  <div class="view-container">
     <CurrentTime />
     <TemperatureOutside />
     <WhoIsHome />
     <LightControl />
     <TemperatureInsideControl />
     <HumidityControl />
-  </main>
+  </div>
 </template>
 
 <style scoped>
-main {
+.view-container {
   display: grid;
-  grid-template-columns: 4fr 4fr 3fr;
-  grid-template-areas:
-    "time temp who"
-    "control control control";
   gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .view-container {
+    grid-template-columns: 4fr 4fr 3fr;
+    grid-template-areas:
+      "time temp who"
+      "control control control";
+  }
 }
 </style>
