@@ -36,11 +36,11 @@ function updateThermometer(valueToChange: number): void {
 <template>
   <section class="box">
     <h3>Temperature inside</h3>
-    <div class="temperature-control">
+    <div class="control control-vertical">
       <button class="control-button increase" @click="increaseTemperature">
         +
       </button>
-      <p class="temperature">{{ temperatureInside }}&#176;C</p>
+      <p class="control-value">{{ temperatureInside }}&#176;C</p>
       <button class="control-button decrease" @click="decreaseTemperature">
         -
       </button>
@@ -49,55 +49,22 @@ function updateThermometer(valueToChange: number): void {
 </template>
 
 <style scoped>
-.temperature-control {
-  margin: 0.5rem auto;
-  position: relative;
-  width: 3.5rem;
-  height: 9rem;
-  display: grid;
-  grid-template-rows: 2rem 1fr 2rem;
-  grid-template-areas:
-    "increase"
-    "temp"
-    "decrease";
+.control {
   background: linear-gradient(to top, var(--color-mint), var(--color-peach));
-  border-radius: 0.5rem;
-  overflow: hidden;
-  text-align: center;
 }
 
-.temperature-control::after {
-  content: "";
-  position: absolute;
-  top: 0;
+.control::after {
   left: 0;
   width: 100%;
   height: var(--temperature-control-height);
   background-color: var(--color-background-soft);
-  z-index: 1;
-}
-
-.control-button {
-  border: none;
-  position: relative;
-  z-index: 2;
 }
 
 .control-button.increase {
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
   background-color: var(--color-peach);
 }
 
 .control-button.decrease {
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
   background-color: var(--color-mint);
-}
-
-.temperature {
-  align-self: center;
-  font-weight: bold;
-  z-index: 2;
 }
 </style>

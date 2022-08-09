@@ -1,0 +1,65 @@
+.control {
+  position: relative;
+  display: grid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.control-horizontal {
+  margin: 3rem auto auto;
+  width: 100%;
+  height: 3.5rem;
+  grid-template-columns: 2rem 1fr 2rem;
+  grid-template-areas: "decrease value increase";
+}
+
+.control-vertical {
+  margin: 0.5rem auto;
+  width: 3.5rem;
+  height: 9rem;
+  grid-template-rows: 2rem 1fr 2rem;
+  grid-template-areas:
+    "increase"
+    "value"
+    "decrease";
+}
+
+.control::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.control-vertical .increase {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.control-vertical .decrease {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.control-horizontal .increase {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.control-horizontal .decrease {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.control-button {
+  border: none;
+  position: relative;
+  z-index: 2;
+}
+
+.control-value {
+  align-self: center;
+  font-weight: bold;
+  z-index: 2;
+}
