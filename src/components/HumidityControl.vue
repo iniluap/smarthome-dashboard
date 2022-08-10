@@ -3,12 +3,13 @@ import { ref } from "vue";
 const airHumidity = ref(45);
 const maxHumidity = 50;
 const minHumidity = 30;
+const humidityIndicatorStep = 3;
 let humidityIndicator = 35;
 
 function increaseHumidity(): void {
   if (airHumidity.value !== maxHumidity) {
     airHumidity.value++;
-    updateHumidity(3);
+    updateHumidity(humidityIndicatorStep);
   } else {
     airHumidity.value;
   }
@@ -17,7 +18,7 @@ function increaseHumidity(): void {
 function decreaseHumidity(): void {
   if (airHumidity.value !== minHumidity) {
     airHumidity.value--;
-    updateHumidity(-3);
+    updateHumidity(-humidityIndicatorStep);
   } else {
     airHumidity.value;
   }
@@ -33,7 +34,7 @@ function updateHumidity(valueToChange: number): void {
 <template>
   <section class="box">
     <h3>Humidity</h3>
-     <div class="control control-vertical">
+    <div class="control control-vertical">
       <button class="control-button increase" @click="increaseHumidity">
         +
       </button>

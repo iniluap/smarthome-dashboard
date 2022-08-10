@@ -3,12 +3,13 @@ import { ref } from "vue";
 const temperatureInside = ref(23);
 const maxTemperature = 30;
 const minTemperature = 18;
+const thermometerIndicatorStep = 5;
 let thermometerIndicator = 55;
 
 function increaseTemperature() {
   if (temperatureInside.value !== maxTemperature) {
     temperatureInside.value++;
-    updateThermometer(5);
+    updateThermometer(thermometerIndicatorStep);
   } else {
     temperatureInside.value;
   }
@@ -17,7 +18,7 @@ function increaseTemperature() {
 function decreaseTemperature() {
   if (temperatureInside.value !== minTemperature) {
     temperatureInside.value--;
-    updateThermometer(-5);
+    updateThermometer(-thermometerIndicatorStep);
   } else {
     temperatureInside.value;
   }
