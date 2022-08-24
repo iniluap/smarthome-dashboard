@@ -43,6 +43,7 @@
   --section-gap: 160px;
   --border-radius-primary: 2rem;
   --border-radius-secondary: 1.5rem;
+  --transition: all 0.2s ease-out;
 
   --temperature-control-height: 55%;
   --light-control-width: 80%;

@@ -49,6 +49,7 @@ function updateLightIntense(valueToChange: number): void {
   height: 100%;
   width: calc(100% - var(--light-control-width));
   background-color: var(--vt-c-black-mute);
+  transition: var(--transition);
 }
 
 .control-button.increase {

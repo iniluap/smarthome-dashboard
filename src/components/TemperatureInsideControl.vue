@@ -59,6 +59,7 @@ function updateThermometer(valueToChange: number): void {
   width: 100%;
   height: var(--temperature-control-height);
   background-color: var(--color-background-soft);
+  transition: var(--transition);
 }
 
 .control-button.increase {

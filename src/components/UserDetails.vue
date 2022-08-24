@@ -60,7 +60,10 @@ const isEdited = ref(false);
           :disabled="!isEdited"
         />
       </form>
-      <button @click="isEdited = !isEdited">
+      <button
+        @click="isEdited = !isEdited"
+        :class="{ 'is-form-disabled': !isEdited }"
+      >
         {{ isEdited ? "Save" : "Edit" }}
       </button>
     </div>
@@ -89,13 +92,34 @@ select {
   display: block;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  width: 100%;
-  max-width: 300px;
+  border: 1px solid var(--color-peach);
+}
+
+input[disabled],
+select[disabled] {
+  border-color: var(--vt-c-divider-light-1);
+  background-color: var(--color-background-mute);
 }
 
 button {
   margin-bottom: 1rem;
   padding: 0.5rem 2rem;
+  background-color: var(--color-peach);
+  border: none;
+}
+
+input,
+select,
+button {
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  width: 100%;
+  max-width: 300px;
+  transition: var(--transition);
+}
+
+button.is-form-disabled {
+  background-color: var(--color-background-mute);
 }
 
 @media (min-width: 1024px) {
