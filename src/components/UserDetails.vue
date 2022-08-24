@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import { storeToRefs } from "pinia";
 import { ref } from "vue";
+import { useUserStore } from "../stores/user";
 
-const name = ref("");
-const surname = ref("");
-const city = ref("");
-const phone = ref("");
+const { name, surname, city, phone, isHome, lastLogin } = storeToRefs(
+  useUserStore()
+);
 const isEdited = ref(false);
 </script>
 
@@ -20,8 +21,10 @@ const isEdited = ref(false);
       <strong>{{ city }}</strong>
       <h4>Phone number:</h4>
       <strong>{{ phone }}</strong>
+      <h4>Location:</h4>
+      <strong>{{ isHome ? "Home" : "Outside" }}</strong>
       <h4>Last login:</h4>
-      <strong>02/03/2022 14:17:34</strong>
+      <strong>{{ lastLogin }}</strong>
     </div>
     <div>
       <form>
@@ -69,9 +72,11 @@ const isEdited = ref(false);
 .user-details {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: repeat(4, 2rem);
+  grid-template-rows: repeat(6, 2rem);
   gap: 1rem;
+  margin-bottom: 2rem;
   padding-left: 2rem;
+  padding-bottom: 1rem;
   border-left: 2px solid var(--color-mint);
 }
 
