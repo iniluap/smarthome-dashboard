@@ -56,6 +56,7 @@ function updateHumidity(valueToChange: number): void {
   width: 100%;
   height: var(--humidity-control-height);
   background-color: var(--color-background-soft);
+  transition: var(--transition);
 }
 
 .control-button.increase {
