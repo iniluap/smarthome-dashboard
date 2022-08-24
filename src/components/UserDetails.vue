@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import { ref } from "vue";
-import { useUserStore } from "../stores/user";
+import { useUserStore } from "@/stores/user";
 
-const { name, surname, city, phone, isHome, lastLogin } = storeToRefs(
+const { name, surname, city, phone, isHome, lastLogin, cities } = storeToRefs(
   useUserStore()
 );
 const isEdited = ref(false);
@@ -45,13 +45,12 @@ const isEdited = ref(false);
           :disabled="!isEdited"
         />
         <label for="city">City:</label>
-        <input
-          type="text"
-          placeholder="Berlin"
-          id="city"
-          v-model="city"
-          :disabled="!isEdited"
-        />
+        <select v-model="city" id="city" :disabled="!isEdited">
+          <option disabled value="Please select one">Please select one</option>
+          <template v-for="cityOption of cities" v-bind:key="cityOption">
+            <option>{{ cityOption }}</option>
+          </template>
+        </select>
         <label for="phone">Phone number:</label>
         <input
           type="text"
@@ -85,7 +84,8 @@ h4 {
   font-weight: normal;
 }
 
-input {
+input,
+select {
   display: block;
   margin-bottom: 1rem;
   padding: 0.5rem;
