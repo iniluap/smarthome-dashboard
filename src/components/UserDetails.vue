@@ -64,7 +64,7 @@ const isEdited = ref(false);
         @click="isEdited = !isEdited"
         :class="{ 'is-form-disabled': !isEdited }"
       >
-        {{ isEdited ? "Save" : "Edit" }}
+        {{ isEdited ? "Save" : "Click to edit" }}
       </button>
     </div>
   </section>
