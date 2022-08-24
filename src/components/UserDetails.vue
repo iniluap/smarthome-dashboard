@@ -10,9 +10,9 @@ const isEdited = ref(false);
 </script>
 
 <template>
-  <h3>User details</h3>
   <section class="box">
     <div class="user-details">
+      <h3>User details</h3>
       <h4>Name:</h4>
       <strong>{{ name }}</strong>
       <h4>Surname:</h4>
@@ -71,10 +71,15 @@ const isEdited = ref(false);
 </template>
 
 <style scoped>
+h4 {
+  color: var(--vt-c-text-light-2);
+  font-weight: normal;
+}
+
 .user-details {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: repeat(6, 2rem);
+  grid-template-rows: repeat(7, 2rem);
   gap: 1rem;
   margin-bottom: 2rem;
   padding-left: 2rem;
@@ -82,9 +87,23 @@ const isEdited = ref(false);
   border-left: 2px solid var(--color-mint);
 }
 
-h4 {
-  color: var(--vt-c-text-light-2);
-  font-weight: normal;
+h3 {
+  grid-column: span 2;
+}
+
+form,
+button {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+input,
+select,
+button {
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  transition: var(--transition);
 }
 
 input,
@@ -93,6 +112,7 @@ select {
   margin-bottom: 1rem;
   padding: 0.5rem;
   border: 1px solid var(--color-peach);
+  width: 100%;
 }
 
 input[disabled],
@@ -102,20 +122,11 @@ select[disabled] {
 }
 
 button {
+  display: block;
   margin-bottom: 1rem;
   padding: 0.5rem 2rem;
   background-color: var(--color-peach);
   border: none;
-}
-
-input,
-select,
-button {
-  border-radius: 0.5rem;
-  height: 2.5rem;
-  width: 100%;
-  max-width: 300px;
-  transition: var(--transition);
 }
 
 button.is-form-disabled {

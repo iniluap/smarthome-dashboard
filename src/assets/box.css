@@ -1,11 +1,11 @@
 .box {
   padding: 1.5rem;
+  border-top: 1px solid var(--vt-c-white-soft);
   border-radius: var(--border-radius-secondary);
   box-shadow:
     0.4px 0.4px 0.5px rgba(0, 0, 0, 0.018),
     1.3px 1.3px 1.5px rgba(0, 0, 0, 0.025),
     3.1px 3.1px 3.6px rgba(0, 0, 0, 0.031),
     6.2px 6.2px 7.6px rgba(0, 0, 0, 0.036),
-    12.6px 12.6px 15.8px rgba(0, 0, 0, 0.045),
-    30px 30px 40px rgba(0, 0, 0, 0.07);
+    12.6px 12.6px 15.8px rgba(0, 0, 0, 0.045);
 }
